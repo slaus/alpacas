@@ -1,0 +1,14 @@
+.main {
+    display   : block;
+    position  : relative;
+    background: $black;
+    width     : 100%;
+    min-height: calc(100vh - 60px);
+    z-index   : 1;
+    color: $white;
+
+    &__wrap {
+        height: 100%;
+        width : 100%;
+    }
+}

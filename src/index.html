@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/assets/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Alpacas Production" />
+    <link rel="manifest" href="/assets/img/favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body class="page__home">
+    @@include('./html/_header.html')
+    <main class="main">
+        <div class="container main__wrap">
+            <div class="video">
+                <video playsinline autoplay muted loop poster="/img/intro.jpeg" style="min-width: 100%">
+                    <source src="/img/intro.mp4" type="video/mp4">
+                </video>
+                <div class="video__text">
+                    <div class="video__text-block">
+                        The authority in music for...
+                        <span class=""><span class="text1">Nightlife</span></span>
+                        <span class=""><span class="text2">Branded Experiences</span></span>
+                        <span class=""><span class="text3">Weddings</span></span>
+                        <span class=""><span class="text4">Events</span></span>
+                    </div>
+                    <a class="video__text-btn" href="book.html">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+    @@include('./html/_footer.html')
+</body>
+
+<script src="./js/scripts.min.js"></script>
+
+</html>

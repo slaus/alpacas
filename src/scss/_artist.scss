@@ -1,0 +1,430 @@
+.artist {
+    height     : 100%;
+    width      : 100%;
+    display    : block;
+    padding-top: 0;
+
+    &__block {
+        width          : 100%;
+        height         : 50vh;
+        position       : relative;
+        overflow       : hidden;
+        display        : flex;
+        justify-content: center;
+        align-items    : center;
+
+        &:after {
+            content   : "";
+            display   : block;
+            width     : 100%;
+            height    : 100%;
+            position  : absolute;
+            left      : 0;
+            top       : 0;
+            background: $black;
+            opacity   : .65;
+        }
+
+        &-img {
+            width   : 100%;
+            height  : 100%;
+            position: absolute;
+            left    : 0;
+            top     : 0;
+
+            img {
+                width     : 100%;
+                height    : 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-video {
+            width   : 100%;
+            height  : 100%;
+            position: absolute;
+            left    : 0;
+            top     : 0;
+
+            video {
+                width     : 100%;
+                height    : 100%;
+                object-fit: cover;
+            }
+        }
+
+        &-name {
+            position      : absolute;
+            margin        : auto;
+            color         : $white;
+            font-family   : $fontSecondary;
+            text-transform: uppercase;
+            font-size     : 110px;
+            font-size     : clamp(40px, 4vw, 110px);
+            line-height   : 110px;
+            line-height   : clamp(40px, 4vw, 110px);
+            font-weight   : 500;
+            text-align    : center;
+            z-index       : 1;
+        }
+    }
+
+
+}
+
+.info {
+    &__block {
+        display              : grid;
+        grid-template-columns: 1fr 1fr;
+        align-items          : center;
+        gap                  : $space;
+
+        @media screen and (max-width: $breakpoint1200) {
+            align-items: flex-start;
+        }
+
+
+        @media screen and (max-width: $breakpoint768) {
+            display       : flex;
+            flex-direction: column-reverse;
+        }
+
+        &-photos {
+            display              : grid;
+            grid-template-columns: 1fr 1fr;
+            align-items          : center;
+            gap                  : calc($space / 3);
+            height               : 100%;
+
+            @media screen and (max-width: $breakpoint577) {
+                grid-template-columns: 1fr;
+            }
+
+            &--img {
+                width : 100%;
+                height: 100%;
+
+                img {
+                    width     : 100%;
+                    height    : 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+
+        &-desc {
+            display       : flex;
+            flex-direction: column;
+            gap           : $space;
+            height        : 100%;
+
+            &--text {
+                b {
+                    font-size: 125%;
+                }
+            }
+
+            &--social {}
+
+            &--btn {
+                color         : $black;
+                font-family   : $fontSecondary;
+                font-size     : 22px;
+                font-size     : clamp(16px, 2.5vw, 22px);
+                font-weight   : 400;
+                display       : flex;
+                background    : $white;
+                transition    : all 1s ease;
+                padding       : calc($space / 3) $space;
+                text-transform: uppercase;
+                width         : fit-content;
+
+                &:hover {
+                    background: $color4;
+                }
+            }
+
+            p+p {
+                margin-top: calc($space / 2);
+            }
+        }
+
+    }
+}
+
+.testimonial {
+    &__block {
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+        gap            : $space;
+
+        &-item {
+            display        : flex;
+            flex-direction : column;
+            gap            : 10px;
+            justify-content: center;
+            align-items    : center;
+            text-align     : center;
+            flex           : 1 1 clamp(280px, 40%, 400px);
+            max-width      : 400px;
+            transition     : all 1s ease;
+            position       : relative;
+            margin-top     : $space;
+
+
+            &:before {
+                content    : ",,";
+                position   : absolute;
+                left       : 0;
+                top        : 0;
+                font-size  : 200px;
+                font-size  : clamp(160px, 2.5vw, 200px);
+                font-weight: 900;
+                z-index    : -1;
+                opacity    : .15;
+            }
+
+            &:hover {
+
+                .testimonial__block-item--title,
+                .testimonial__block-item--desc {
+                    transform: scale(1.15) rotate(-3deg);
+                }
+            }
+
+            &--title {
+                transform     : scale(1) rotate(0deg);
+                transition    : all 1s ease;
+                color         : $white;
+                font-size     : 110%;
+                font-weight   : 500;
+                text-transform: uppercase;
+            }
+
+            &--desc {
+                transform : scale(1) rotate(0deg);
+                transition: all 1s ease;
+                color     : $white;
+            }
+        }
+    }
+}
+
+.music {
+    &__block {
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+        gap            : $space;
+
+        &-item {
+            display        : flex;
+            flex-direction : column;
+            gap            : 10px;
+            justify-content: center;
+            align-items    : center;
+            text-align     : center;
+            flex           : 1 1 clamp(280px, 40%, 400px);
+            max-width      : 400px;
+            transition     : all 1s ease;
+            margin-top     : $space;
+
+            &:hover {
+
+                .music__block-item--title,
+                .music__block-item--img {
+                    transform: scale(1.15) rotate(-3deg);
+                }
+            }
+
+            &--title {
+                transform     : scale(1) rotate(0deg);
+                transition    : all 1s ease;
+                color         : $white;
+                font-size     : 110%;
+                font-weight   : 500;
+                text-transform: uppercase;
+            }
+
+            &--img {
+                transform  : scale(1) rotate(0deg);
+                transition : all 1s ease;
+                position   : relative;
+                width      : 90%;
+                height     : 90%;
+                padding-top: 100%;
+
+                img {
+                    width     : 100%;
+                    height    : 100%;
+                    position  : absolute;
+                    left      : 0;
+                    top       : 0;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+}
+
+.audio {
+    &__block {
+        display       : flex;
+        flex-direction: column;
+        gap           : calc($space / 2);
+
+        &-player {
+            display    : flex;
+            align-items: center;
+            background : $blackLight;
+            padding    : calc($space / 2);
+            gap        : calc($space / 2);
+            width      : 100%;
+        }
+
+        &-track {
+            width         : 100%;
+            display       : flex;
+            flex-direction: column;
+        }
+
+        &-top {
+            display       : flex;
+            flex-direction: column;
+        }
+
+        &-btn {
+            background     : transparent;
+            color          : $white;
+            border         : none;
+            cursor         : pointer;
+            font-size      : 56px;
+            font-size      : clamp(32px, 2.5vw, 56px);
+            transition     : all .5s ease;
+            width          : 60px;
+            width          : clamp(35px, 2.5vw, 60px);
+            flex           : 0 0 60px;
+            flex           : 0 0 clamp(35px, 2.5vw, 60px);
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+
+            &:hover {
+                background: transparent;
+                color     : $color4;
+            }
+        }
+
+        &-time {
+            font-size      : 14px;
+            font-size      : clamp(12px, 2.5vw, 14px);
+            width          : 100%;
+            display        : flex;
+            justify-content: space-between;
+            align-items    : center;
+        }
+
+        &-progress {
+            flex-grow : 1;
+            height    : 4px;
+            background: $white;
+            position  : relative;
+            overflow  : hidden;
+
+            &--bar {
+                height    : 100%;
+                width     : 0%;
+                background: $color4;
+                transition: width 0.1s linear;
+            }
+        }
+
+        &-author {
+            flex-grow  : 1;
+            font-size  : 22px;
+            font-size  : clamp(17px, 2.5vw, 22px);
+            font-weight: bold;
+        }
+
+        &-info {
+            flex-grow  : 1;
+            font-size  : 18px;
+            font-size  : clamp(17px, 2.5vw, 18px);
+            font-weight: 200;
+        }
+
+        &-raiting {
+            color         : $black;
+            font-family   : $fontSecondary;
+            font-size     : 22px;
+            font-size     : clamp(16px, 2.5vw, 22px);
+            font-weight   : 400;
+            display       : flex;
+            background    : $white;
+            transition    : all 1s ease;
+            padding       : calc($space / 3) $space;
+            text-transform: uppercase;
+            width         : fit-content;
+            margin-top: $space;
+            margin-left: auto;
+            margin-right: auto;
+
+            &:hover {
+                background: $color4;
+            }
+        }
+
+        audio {
+            display: none;
+        }
+    }
+}
+
+.book {
+
+    &__block {
+        min-height         : 60vh;
+        width              : 100%;
+        display            : flex;
+        align-items        : center;
+        justify-content    : center;
+        position           : relative;
+        overflow           : hidden;
+        background-size    : cover;
+        background-position: center center;
+        background-repeat  : no-repeat;
+        position           : relative;
+
+        &:before {
+            content   : "";
+            display   : block;
+            width     : 100%;
+            height    : 100%;
+            position  : absolute;
+            left      : 0;
+            top       : 0;
+            background: $black;
+            opacity   : .65;
+        }
+
+        &-btn {
+            color         : $white;
+            font-family   : $fontSecondary;
+            font-size     : 34px;
+            font-size     : clamp(22px, 2.5vw, 34px);
+            line-height   : clamp(22px, 2.5vw, 34px);
+            font-weight   : 500;
+            display       : flex;
+            background    : $black;
+            transition    : all 1s ease;
+            padding       : calc($space / 2) $space;
+            text-transform: uppercase;
+            z-index       : 1;
+
+            &:hover {
+                background: $color4;
+            }
+        }
+    }
+}

@@ -1,0 +1,139 @@
+.roster {
+    &__block {
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+        gap            : $space;
+
+        &-item {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            flex           : 1 1 clamp(250px, 40%, 360px);
+            max-width      : 400px;
+            transition     : all 1s ease;
+            position       : relative;
+            transition     : all 1s ease;
+            overflow       : hidden;
+
+            &:hover {
+                .roster__block-item--img {
+                    opacity   : 0;
+                    transition: transform 1s ease, opacity 1.5s ease;
+                    transform : scale(1.15) rotate(-3deg);
+                }
+
+                .roster__block-item--video {
+                    opacity   : 1;
+                    transition: all 1.5s ease;
+                }
+
+                .roster__block-item--order {
+                    color       : $color4;
+                    border-color: $color4;
+                    transition  : all 1.5s ease;
+                }
+
+                .roster__block-item--name {
+                    color     : $color4;
+                    transition: all 1.5s ease;
+                }
+            }
+
+            &--play {
+                position: absolute;
+                right   : 12px;
+                bottom  : 12px;
+                height  : 50px;
+                width   : 50px;
+                z-index : 1;
+                display : none;
+
+                img {
+                    width     : 100%;
+                    height    : 100%;
+                    object-fit: contain;
+                    filter    : invert(14%) sepia(91%) saturate(4312%) hue-rotate(287deg) brightness(116%) contrast(126%);
+                    filter    : invert(100%) sepia(0%) saturate(2717%) hue-rotate(320deg) brightness(106%) contrast(106%);
+                }
+            }
+
+            &--img {
+                width     : 100%;
+                height    : 100%;
+                position  : relative;
+                opacity   : 1;
+                transition: transform 1s ease, opacity 1.5s ease;
+
+                &:after {
+                    content   : "";
+                    position  : absolute;
+                    display   : block;
+                    left      : 0;
+                    top       : 0;
+                    width     : 100%;
+                    height    : 100%;
+                    background: linear-gradient(0deg, $black, transparent);
+                    opacity   : .7;
+                }
+
+                img {
+                    width     : 100%;
+                    height    : 100%;
+                    object-fit: contain;
+                    filter    : grayscale(1);
+                }
+            }
+
+            &--video {
+                position  : absolute;
+                left      : 0;
+                top       : 0;
+                width     : 100%;
+                height    : 100%;
+                opacity   : 0;
+                transition: all 1.5s ease;
+
+                video {
+                    width     : 100%;
+                    height    : 100%;
+                    object-fit: contain;
+                }
+            }
+
+            &--name {
+                position      : absolute;
+                bottom        : calc($space / 2);
+                left          : calc($space / 2);
+                color         : $white;
+                font-family   : $fontSecondary;
+                font-size     : 22px;
+                font-size     : clamp(20px, 2.5vw, 23px);
+                font-weight   : 500;
+                text-transform: uppercase;
+                transition    : all 1s ease;
+            }
+
+            &--order {
+                border         : 1px solid $white;
+                width          : 100%;
+                height         : 100%;
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                color          : $white;
+                font-family    : $fontSecondary;
+                font-size      : 35px;
+                font-size      : clamp(24px, 2.5vw, 36px);
+                font-weight    : 500;
+                text-transform : uppercase;
+                transition     : all 1s ease;
+                @media screen and (max-width: $breakpoint577) {
+                    padding: $space 0;
+                    border         : 1px solid $color4;
+                    color          : $color4;
+                }
+            }
+        }
+    }
+}

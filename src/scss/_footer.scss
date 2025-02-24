@@ -1,0 +1,269 @@
+.footer {
+    display    : block;
+    width      : 100%;
+    bottom     : 0;
+    min-height : max-content;
+    background : $black;
+    color      : $white;
+    padding    : 40px 0;
+    z-index    : 0;
+    font-size  : 16px;
+    line-height: 20px;
+    font-size  : clamp(14px, 2vw, 17px);
+
+    a {
+        color      : $white;
+        display    : inline-block;
+        position   : relative;
+        white-space: nowrap;
+        z-index    : 0;
+
+        &:before {
+            content   : "";
+            display   : block;
+            position  : absolute;
+            left      : 0;
+            bottom    : 0;
+            width     : 0%;
+            height    : 5px;
+            background: $color4;
+            z-index   : -1;
+            transition: all .5s ease;
+        }
+
+        &:hover {
+            &:before {
+                width     : 100%;
+                transition: all .5s ease;
+            }
+        }
+    }
+
+    &__wrap {
+        display       : flex;
+        flex-direction: column;
+        gap           : $space;
+    }
+
+    &__top {
+        display        : flex;
+        align-items    : center;
+        justify-content: center;
+
+        &-logo {
+            max-width: 100px;
+
+            img {
+                width     : 100%;
+                height    : 100%;
+                object-fit: contain;
+            }
+        }
+    }
+
+    &__middle {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+        @media screen and (max-width: $breakpoint992) {
+            flex-direction: column;
+            gap           : 50px;
+        }
+
+        &-address {
+            display       : flex;
+            flex-direction: column;
+            gap           : 5px;
+
+            @media screen and (max-width: $breakpoint992) {
+                text-align: center;
+            }
+
+            &--contacts {
+                margin-top : 5px;
+                padding-top: 8px;
+                border-top : 1px solid #272727;
+                display    : flex;
+                gap        : 20px;
+                align-items: center;
+                flex-wrap  : wrap;
+
+                @media screen and (max-width: $breakpoint992) {
+                    justify-content: center;
+                }
+
+                @media screen and (max-width: $breakpoint480) {
+                    flex-direction: column;
+                    gap           : 5px;
+                }
+
+                a+a {
+                    position: relative;
+                    display : inline-block;
+
+                    &:after {
+                        content   : "";
+                        position  : absolute;
+                        left      : -10px;
+                        top       : 0;
+                        display   : block;
+                        width     : 1px;
+                        height    : 100%;
+                        background: $white;
+
+                        @media screen and (max-width: $breakpoint480) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-newsletter {
+            display       : flex;
+            flex-direction: column;
+            align-items   : flex-end;
+            gap           : 10px;
+            width         : 100%;
+            max-width     : 300px;
+            flex          : 1;
+
+            @media screen and (max-width: $breakpoint992) {
+                align-items: center;
+            }
+
+            p {
+                font-weight: 400;
+                font-size  : 14px;
+            }
+
+            .subscribe {
+                display    : flex;
+                align-items: center;
+                width      : 100%;
+                max-width  : 300px;
+                height     : 40px;
+                background : $white;
+                border     : 2px solid $white;
+
+                &__input {
+                    background     : $white;
+                    height         : 100%;
+                    width          : 100%;
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: center;
+
+                    input {
+                        width        : 100%;
+                        height       : 100%;
+                        padding-left : 10px;
+                        padding-right: 10px;
+                        outline      : none;
+                    }
+                }
+
+                &__submit {
+                    background     : $black;
+                    height         : 100%;
+                    width          : fit-content;
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: center;
+
+                    input {
+                        height       : 100%;
+                        width        : 100%;
+                        background   : $black;
+                        color        : $white;
+                        padding-left : 10px;
+                        padding-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__bottom {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : center;
+
+        @media screen and (max-width: $breakpoint992) {
+            flex-direction: column-reverse;
+            gap           : 30px;
+        }
+
+        &-copy {
+            display    : flex;
+            gap        : 20px;
+            align-items: center;
+
+            @media screen and (max-width: $breakpoint992) {
+                flex-direction: column-reverse;
+                text-align    : center;
+            }
+
+            a+a {
+                position   : relative;
+                display    : inline-block;
+                margin-left: 20px;
+
+                @media screen and (max-width: $breakpoint480) {
+                    display: block;
+                    margin : 0;
+                    padding: 0;
+                }
+
+                &:after {
+                    content   : "";
+                    position  : absolute;
+                    left      : -10px;
+                    top       : 0;
+                    display   : block;
+                    width     : 1px;
+                    height    : 100%;
+                    background: $white;
+
+                    @media screen and (max-width: $breakpoint480) {
+                        display: none;
+                        left   : 0;
+                    }
+                }
+            }
+        }
+
+        &-social {
+            display    : flex;
+            gap        : 10px;
+            align-items: center;
+
+            &--icon {
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                height         : 40px;
+                width          : 40px;
+
+                &:hover {
+                    &:before {
+                        display: none;
+                    }
+
+                    img {
+                        filter: invert(14%) sepia(91%) saturate(4312%) hue-rotate(287deg) brightness(116%) contrast(126%);
+                    }
+                }
+
+                img {
+                    width     : 100%;
+                    height    : 100%;
+                    object-fit: contain;
+                    filter    : invert(100%) sepia(0%) saturate(2717%) hue-rotate(320deg) brightness(106%) contrast(106%);
+                    transition: all 1s ease;
+                }
+            }
+        }
+    }
+}

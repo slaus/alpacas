@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.min.css">
+</head>
+
+<body class="page__roster">
+    @@include('./html/_header.html')
+    <main class="main">
+        <div class="container main__wrap">
+            <section class="roster">
+                <!-- <h1 class="title">Roster</h1> -->
+                <div class="roster__block">
+                    <a href="artist.html" class="roster__block-item">
+                        <div class="roster__block-item--play">
+                            <img src="/img/icons/play.svg" alt="">
+                        </div>
+                        <div class="roster__block-item--img">
+                            <img src="img/roster/1.jpg" alt="roster">
+                        </div>
+                        <div class="roster__block-item--video">
+                            <video playsinline autoplay muted loop poster="img/roster/1.jpg" style="min-width: 100%">
+                                <source src="img/roster/1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="roster__block-item--name">Ana Boo</div>
+                    </a>
+                    <a href="artist.html" class="roster__block-item">
+                        <div class="roster__block-item--play">
+                            <img src="/img/icons/play.svg" alt="">
+                        </div>
+                        <div class="roster__block-item--img">
+                            <img src="img/roster/2.jpg" alt="roster">
+                        </div>
+                        <div class="roster__block-item--video">
+                            <video playsinline autoplay muted loop poster="img/roster/2.jpg" style="min-width: 100%">
+                                <source src="img/roster/2.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="roster__block-item--name">Bella de Leon</div>
+                    </a>
+                    <a href="artist.html" class="roster__block-item">
+                        <div class="roster__block-item--play">
+                            <img src="/img/icons/play.svg" alt="">
+                        </div>
+                        <div class="roster__block-item--img">
+                            <img src="img/roster/3.jpeg" alt="roster">
+                        </div>
+                        <div class="roster__block-item--video">
+                            <video playsinline autoplay muted loop poster="img/roster/3.jpeg" style="min-width: 100%">
+                                <source src="img/roster/3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="roster__block-item--name">Chachi</div>
+                    </a>
+                    <a href="artist.html" class="roster__block-item">
+                        <div class="roster__block-item--play">
+                            <img src="/img/icons/play.svg" alt="">
+                        </div>
+                        <div class="roster__block-item--img">
+                            <img src="img/roster/4.jpg" alt="roster">
+                        </div>
+                        <div class="roster__block-item--video">
+                            <video playsinline autoplay muted loop poster="img/roster/4.jpg" style="min-width: 100%">
+                                <source src="img/roster/4.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="roster__block-item--name">Chizzle</div>
+                    </a>
+                    <a href="artist.html" class="roster__block-item">
+                        <div class="roster__block-item--play">
+                            <img src="/img/icons/play.svg" alt="">
+                        </div>
+                        <div class="roster__block-item--img">
+                            <img src="img/roster/5.jpg" alt="roster">
+                        </div>
+                        <div class="roster__block-item--video">
+                            <video playsinline autoplay muted loop poster="img/roster/5.jpg" style="min-width: 100%">
+                                <source src="img/roster/5.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                        <div class="roster__block-item--name">Chris Bachmann</div>
+                    </a>
+                    <a href="book.html" class="roster__block-item">
+                        <div class="roster__block-item--order">Work with Us</div>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+    @@include('./html/_footer.html')
+</body>
+
+<script src="./js/scripts.min.js"></script>
+
+</html>

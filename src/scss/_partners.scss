@@ -1,0 +1,45 @@
+.partners {
+    &__block {
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+        gap            : $space;
+
+        &.col-3 {
+            .partners__block-img {
+                flex     : 1 1 clamp(280px, 40%, 400px);
+                max-width: 400px;
+            }
+        }
+
+        &.col-4 {
+            .partners__block-img {
+                flex      : 1 1 clamp(280px, 40%, 350px);
+                max-width : 350px;
+                margin-top: 0;
+            }
+        }
+
+        &-img {
+            display        : flex;
+            justify-content: center;
+            align-items    : center;
+            transition     : all 1s ease;
+            margin-top     : $space;
+
+            &:hover {
+                img {
+                    transform: scale(1.15) rotate(-3deg);
+                }
+            }
+
+            img {
+                width     : 90%;
+                height    : 90%;
+                object-fit: contain;
+                transform : scale(1) rotate(0deg);
+                transition: all 1s ease;
+            }
+        }
+    }
+}

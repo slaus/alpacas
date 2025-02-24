@@ -1,0 +1,143 @@
+.form {
+    margin-right  : auto;
+    margin-left   : auto;
+    width         : 100%;
+    max-width     : 1400px;
+    margin-left   : auto;
+    margin-right  : auto;
+    padding       : $space 0;
+    display       : flex;
+    flex-direction: column;
+    gap           : calc(clamp(20px, 3vw, 50px) / 2);
+    // background: $blackLight;
+
+    &__group {
+
+        &>label {
+            display      : block;
+            margin-bottom: 6px;
+        }
+
+        &-submit {
+            display        : flex;
+            width          : 100%;
+            gap            : $space;
+            align-items    : center;
+            justify-content: center;
+            margin-top     : $space;
+
+        }
+
+        &.required {
+            label {
+                &:after {
+                    content    : "*";
+                    color      : $color4;
+                    margin-left: 10px;
+                    font-weight: 200;
+                }
+            }
+        }
+    }
+
+    label {
+        font-size  : 20px;
+        font-size  : clamp(16px, 2.5vw, 20px);
+        font-weight: 400;
+        text-transform: uppercase;
+        font-family: $fontSecondary;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="date"],
+    select,
+    textarea {
+        width        : 100%;
+        height       : 45px;
+        border       : 2px solid $blackLight;
+        background   : $white;
+        padding-right: 15px;
+        padding-left : 15px;
+        color        : $black;
+        transition   : all 1s ease;
+        font-size  : 17px;
+        font-size  : clamp(14px, 2.5vw, 17px);
+    }
+
+    input[type="text"]::placeholder,
+    input[type="tel"]::placeholder,
+    input[type="email"]::placeholder,
+    input[type="date"]::placeholder,
+    textarea::placeholder {
+        color: #adadad;
+    }
+
+    input[type="text"]:focus,
+    input[type="tel"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+        border-color: $color4;
+    }
+
+    textarea {
+        height        : 100px;
+        min-height    : 42px;
+        max-height    : 200px;
+        padding-top   : 10px;
+        padding-bottom: 10px;
+        resize        : vertical;
+    }
+
+    select {
+        -webkit-appearance : none;
+        background-image   : url("../img/icon.svg");
+        background-repeat  : no-repeat;
+        background-position: right 10px center;
+    }
+
+    button[type="submit"] {
+        font-family   : $fontSecondary;
+        font-size     : 22px;
+        font-size     : clamp(16px, 2.5vw, 22px);
+        font-weight   : 400;
+        display       : flex;
+        align-items   : center;
+        transition    : all 1s ease;
+        padding       : calc($space / 3) $space;
+        text-transform: uppercase;
+        width         : fit-content;
+        border        : 2px solid $white;
+
+        &:hover {
+            background  : $color4;
+            border-color: $color4;
+        }
+    }
+
+    button[type="reset"] {
+        font-family   : $fontSecondary;
+        font-size     : 22px;
+        font-size     : clamp(16px, 2.5vw, 22px);
+        font-weight   : 400;
+        display       : flex;
+        align-items   : center;
+        transition    : all 1s ease;
+        padding       : calc($space / 3) $space;
+        text-transform: uppercase;
+        width         : fit-content;
+        border        : 2px solid $white;
+        background    : $black;
+        color         : $white;
+
+        &:hover {
+            color       : $color4;
+            border-color: $color4;
+        }
+    }
+}
+
+:focus {
+    outline: 0;
+}

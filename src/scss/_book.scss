@@ -1,0 +1,19 @@
+.booking {
+    height : 100%;
+    width  : 100%;
+    padding: 50px 0;
+    padding: clamp(20px, 2vw, 50px) 0;
+
+    &__block {
+        &-desc {
+            text-align: center;
+            width     : 100%;
+            max-width : 1400px;
+            margin    : auto;
+        }
+
+        &-form {
+            margin-top: $space;
+        }
+    }
+}

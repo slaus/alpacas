@@ -1,0 +1,91 @@
+.video {
+    height         : 100%;
+    width          : 100%;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    position       : relative;
+    overflow       : hidden;
+
+    &:before {
+        content   : "";
+        display   : block;
+        width     : 100%;
+        height    : 100%;
+        position  : absolute;
+        left      : 0;
+        top       : 0;
+        background: $black;
+        opacity   : .65;
+    }
+
+    &__text {
+        display       : flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: fit-content;
+        gap: 50px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        flex-direction: column;
+        width         : max-content;
+        height        : max-content;
+
+        &-block {
+            color      : $white;
+            font-family: $fontSecondary;
+            text-transform: uppercase;
+            font-size  : 110px;
+            font-size  : clamp(40px, 4vw, 110px);
+            line-height  : 110px;
+            line-height  : clamp(40px, 4vw, 110px);
+            font-weight: 500;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+
+            span {
+                display: none;
+                opacity: 0;
+
+                &:first-child {
+                    display: block;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-btn {
+            color      : $white;
+            font-family: $fontSecondary;
+            font-size  : 22px;
+            font-size  : clamp(20px, 2.5vw, 23px);
+            font-weight: 500;
+            display    : flex;
+            background: $black;
+            transition : all 1s ease;
+            padding    : 25px 50px;
+            text-transform: uppercase;
+
+            &:hover {
+                background: $color4;
+            }
+        }
+    }
+
+    video {
+        height    : 100%;
+        min-height: calc(100vh - 60px);
+        width     : 100%;
+        object-fit: cover;
+    }
+}

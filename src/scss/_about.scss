@@ -1,0 +1,18 @@
+.about {
+    height : 100%;
+    width  : 100%;
+    padding: 50px 0;
+    padding: clamp(20px, 2vw, 50px) 0;
+
+    &>*+* {
+        margin-top: $space;
+    }
+
+    &>ul {
+        padding-left: calc($space * 1.5);
+
+        li {
+            list-style: square;
+        }
+    }
+}

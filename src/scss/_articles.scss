@@ -1,0 +1,43 @@
+.articles {
+    &__block {
+        display        : flex;
+        flex-wrap      : wrap;
+        justify-content: center;
+        gap            : $space;
+
+        &-item {
+            display        : flex;
+            flex-direction : column;
+            gap            : 10px;
+            justify-content: center;
+            align-items    : center;
+            text-align: center;
+            flex           : 1 1 clamp(280px, 40%, 400px);
+            max-width      : 400px;
+            transition     : all 1s ease;
+
+            &:hover {
+
+                .articles__block-item--title,
+                .articles__block-item--desc {
+                    transform: scale(1.15) rotate(-3deg);
+                }
+            }
+
+            &--title {
+                transform : scale(1) rotate(0deg);
+                transition: all 1s ease;
+                color: $white;
+                font-size: 110%;
+                font-weight: 500;
+                text-transform: uppercase;
+            }
+
+            &--desc {
+                transform : scale(1) rotate(0deg);
+                transition: all 1s ease;
+                color: $white;
+            }
+        }
+    }
+}
